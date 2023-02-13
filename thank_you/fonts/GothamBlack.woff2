@@ -1,0 +1,1739 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLL7NTX');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+
+function validateForm() {
+
+  //var x = document.myform.mobile.value.length;
+  // if ( x != 10){
+//	alert("Invalid Mobile Number!");
+ //  return false;
+  // }
+
+// Mobile Validation 29 Jun - apurba
+  var x = document.myform.mobile.value.length;
+  var m_fstdigt = document.myform.mobile.value.substring(0, 1);
+  var validm = 0;
+    if ( x != 10){
+	alert("Invalid Mobile Number!");
+   return false;
+   }
+   else {
+    if (m_fstdigt == '0' || m_fstdigt == '1' ){
+        alert("Invalid Mobile Number!");
+        return false;
+   	}
+   for (let i = 1; i < x; i++)
+    if (document.myform.mobile.value.substring(i, i+1) != m_fstdigt)
+                validm = 1; 
+    if (validm == 0 ) {
+        alert("Invalid Mobile Number!");
+        return false;
+    	}
+   }
+
+    if (document.myform.pinno.value.length != 6 ) {
+        alert("Invalid Pincode!");
+   return false;
+    }
+// Email Validation 29 June - Apurba 
+
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.myform.email.value))
+  {
+    
+  }
+else {
+    alert("You have entered an invalid email address!");
+    return false;
+}
+
+// bill amount validation
+if(document.myform.FmIMF.value == '')
+{
+    alert("Please enter your monthly electricity bill amount");
+    return false;
+}
+if ( document.myform.FmIMF.value < 100 )
+{
+    alert("Please recheck your monthly electricity bill amount");
+    return false;
+}
+
+
+// for UTM 30th June 2021
+	var url = new URL(window.location.href.toLowerCase());
+	var utm_Source = url.searchParams.get("utm_source");
+	var utm_medium = url.searchParams.get("utm_medium");
+	var utm_campaign = url.searchParams.get("utm_campaign"); 
+	var utm_string = "Microsite/" + utm_Source +"/" + utm_medium + "/" + utm_campaign;
+	if (utm_Source)
+	{
+	    document.getElementById("00N0o00000NzkJl").value = utm_string;
+	} 
+
+document.getElementById("subbut").disabled=true;;
+   return true;
+} 
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tata Power Solar </title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/new_popup.css">
+	<link rel="stylesheet" href="css/style-home.css">
+</head>
+<body>
+	 <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLL7NTX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+    <section class="wrraper" id="top-s">   
+        <header>
+            <div class="logo">
+                <div class="logo_left">
+                    <figure>
+                        <a href="index.html"> <img src="images/tata-solar-logo.png" alt="tata-solar-logo"  class="lazyload"></a>
+                    </figure>
+                </div>
+                <div class="logo_right">
+                    <figure>
+                        <img src="images/tata-logo.png" alt="tata-logo"  class="lazyload">
+                    </figure>
+                </div>
+            </div>
+        </header>
+
+        <section class="right-fixed">
+            <ul>
+                <li><a href="tel:18002577777" class="gtmcallusmenubuttonclick"></a><img src="images/msg-icon.png" class="mr-3" alt=""  class="lazyload">
+                    <h6 class="color-black fs-12 font-poppins text-bold m-0">Call us (Toll free) <br/>1800 25 77777 </h6>
+                </li>
+                <li><a href="#form-top" class="gtmenquirenowmenubuttonclick"></a><img src="images/enquire.png" class="mr-3" alt=""  class="lazyload">
+                    <h6 class="color-black fs-12 font-poppins text-bold m-0">Enquire Now</h6>
+                </li>
+                <li><a href="https://calculator.tatapowersolar.com/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=solar_calculator_side_sticky_button" class=" gtmsolarcalculatormenubuttonclick" target="_bank"></a><img src="images/call-icon.png"  class="mr-3" alt=""  class="lazyload">
+                    <h6 class="color-black fs-12 font-poppins text-bold m-0">Solar<br>Calculator </h6>
+                </li>
+                <li><a href="javascript:;" style="display: none;"></a><img src="images/menu-icon.png"  class="mr-3 mt-1" alt=""  class="lazyload">
+                    <h6 class="color-black fs-16 font-poppins text-bold m-0 d-flex flex-column">
+                       <a href="#top-s" class="color-black mb-3 mt-2 fs-12 gtmgototopmenubuttonclick"> Go to top</a> 
+                        <a href="#form-top" class="color-black mb-3 fs-12 gtmenquirenowfromgototopbuttonclick"> Enquire now</a> 
+                        <a href="#roof-top" class="color-black mb-3 fs-12 gtmwhatissolarrooftopgototopbuttonclick"> What is Solar Rooftop? </a> 
+						<a href="#roof-top" class="color-black mb-3 fs-12 gtmgosolarin3easystepgototopbuttonclick"> Go Solar in 3 Easy Steps </a>
+                        <a href="#why-go-solar" class="color-black mb-3 fs-12 gtmwhygosolargototopbuttonclick"> Why go solar? </a> 
+                        <a href="#why-choose-us" class="color-black mb-3 fs-12 gtmwhychoosetatapowergototopbuttonclick"> Why choose Tata Power? </a> 
+                        <a href="#product-range" class="color-black mb-3 fs-12 gtmproductrangegototopbuttonclick"> Product Range </a> 
+                        <a href="#finance-schemes" class="color-black mb-3 fs-12 gtmfinancingschemegototopbuttonclick"> Financing schemes </a> 
+                        <a href="#projects" class="color-black mb-3 fs-12 gtmmarqueeprojectsgototopbuttonclick"> Marqee Projects</a>                         
+                        <a href="#SolaroofianBytes" class="color-black mb-3 fs-12 gtmgosolarin3easystepgototopbuttonclick">SolaroofianBytes</a>
+                        <!--<a href="#watch" class="color-black mb-3 fs-12 gtmgosolarin3easystepgototopbuttonclick">Watch the film</a>-->
+                    </h6>
+                </li>
+            </ul>
+
+            <div class="closeable-right-box bg-color-blue mt-5">
+                <a href="javascript:void(0)" class="bg-color-white color-black close-btn">X</a>
+                <div class="box-cont main-cont-sec font-gotham">
+                    <img src="images/calc.png" alt="calc.png"  class="lazyload">
+                    <h3 class="my-4 color-white"><span>WONDERING HOW MUCH YOU COULD SAVE? </span></h3>
+                    <a href="https://calculator.tatapowersolar.com/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=solar_calculator_popup" target="_blank" class="color-black bg-color-white font-poppins px-4 py-1 width-100">Visit our Solar Calculator now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <div class="hero-slider main-cont-sec">
+                <ul>
+<!--
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner-01.jpg" alt="banner-01">
+                            <div class="hero-img-cont">
+                                 <h3>
+                                    <span>  Turn your roof into </span> <br>
+                                     an earning asset of your family
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+-->
+					  <li>
+                        <div class="hero-img-sec">
+                            <img data-lazy="images/banner_new1.jpg" alt="banner-01">
+                            <div class="hero-img-cont hero-img-cont_banner">
+                                 <h3>
+                                    <span>Save Up to 50%<sup>*</sup></span> <br>
+                                     on your Electricity bills
+                                </h3>
+								<div class="des">
+									<!--<span>Disclaimer</span>-->
+									<a href="#tdsource" class="js-anchor-link" ><sup>*</sup>T&C Apply </a>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+					<li>
+                        <div class="hero-img-sec">
+                            <img data-lazy="images/banner_new2.jpg" alt="banner-01">
+                            <div class="hero-img-cont hero-img-cont_banner">
+                                 <h3>
+                                    <span>India's No.1<sup>#</sup></span> <br>
+                                     Solar Rooftop Company
+                                </h3>
+								<div class="des">
+									<!--<span>Disclaimer</span>-->
+									<a href="#tdsource" class="js-anchor-link" ><sup>#</sup>Source</a>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+					<li>
+                        <div class="hero-img-sec">
+                            <img data-lazy="images/banner-01r.jpg" alt="banner-01">
+                            <div class="hero-img-cont">
+                                 <h3>
+                                    <span>Turn your roof into</span> <br>
+                                     An earning asset for<br> your family
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+					
+                    <li>
+                        <div class="hero-img-sec">
+                            <img data-lazy="images/banner-02.jpg" alt="banner-02">
+                            <div class="hero-img-cont">
+                                <h3>
+                                    <span>  Trusted performance and quality with attractive </span> <br>
+                                    financing schemes for your solar rooftop 
+                                </h3>
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hero-img-sec">
+                            <img data-lazy="images/banner-03.jpg" alt="banner-03">
+                            <div class="hero-img-cont">
+                               <h3>
+                                    <span>  Maximize savings on </span> <br>
+                                    Electricity bills with your solar rooftop
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="bottom-form color-white font-gotham" data-aos="fade-down">
+                    <div class="row">
+                        <div class="col-md-3 p-0 ">
+                            <div class="call-today bg-color-primery text-center height-100 py-3">
+                                
+                                <h6 class="font-poppins font-w100 m-0 fs-26 position-relative"><div class="ph_icon"><img src="images/ph_icon.png" alt="icon"  class="lazyload" /></div> Call Today</h6>
+                                <a class="color-white font-gotham fs-30" href="tel:18002577777">1800 25 77777 </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 p-0" id="form-top">
+                            <div class="hero-form d-flex align-items-center justify-content-center bg-color-primery-d height-100 font-poppins font-w100 hero_box">
+                                
+							<form name="myform" action="https://webto.salesforce.com/servlet/servlet.WebToLead" class="d-flex align-items-center" onsubmit="return validateForm()"  method = "post">
+<input type="hidden" id="encoding" name="encoding" value="UTF-8">
+<input type="hidden" id="oid" name="oid" value="00D90000000kw0v">
+
+                                    <div class="form-wrap my-3 form_main_box">
+
+                                        <div class="radio-btn d-flex align-item-center mb-4 mr-3 enquery_box">
+                                            <span class="mx-1 fs-22 form-label enquery_text">Enquire Now -</span>
+                                            <div class="form_right_box">
+                                                <p class="font-poppins m-0 ml-2"> I'm looking for </p>
+                                            <div class="custom-control custom-radio ml-0 ml-md-4">
+                                                <input type="radio" class="custom-control-input" id="customRadio" name="00N9000000FSfoi" value="Residential" required>
+                                                <label class="custom-control-label m-0" for="customRadio">Residential</label>
+                                            </div>
+                                            <div class="custom-control custom-radio ml-0 ml-md-4">
+                                                <input type="radio" class="custom-control-input" id="customRadio2" name="00N9000000FSfoi" value="" required>
+                                                <label class="custom-control-label m-0" for="customRadio2">Non-Residential</label>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-inputs d-flex align-item-center flex-wrap form_box">
+                                            <input type="text" id="last_name" name="last_name" placeholder="Name*" pattern="[a-zA-Z .]{2,}" title="Only Alphabets with space and dot" required>
+                                            <input type="number" id="mobile" name="mobile" placeholder="10 digit Mobile number*" required>
+                                            <input type="email" id="email" name="email" placeholder="Email*" required>
+                                            
+                                            <!-- <input type="text" id="00N0o00000FmIMF" name="00N0o00000FmIMF" placeholder="Monthly Electricity Bill (Rs)*" pattern="[0-9]{2,6]" title="Only digits" required> -->
+					    <!-- <input type="number" id="FmIMF" name="00N0o00000FmIMF" class="mask" placeholder="Monthly Electricity Bill (Rs)*"  required> -->
+						<input type="number" id="FmIMF" name="00N0o00000FmIMF" class="mask" placeholder="Monthly Electricity Bill (Rs)*" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"> 
+					<input type="number" id="pinno" name="00N0o00000NzkKF" placeholder="6 digit pincode*" pattern="[0-9]{6}" title="Only 6 digits number" required>
+                                            <input type="hidden" id="00NC6000000Nv70" name="00NC6000000Nv70" value="Rs.">
+<input type="hidden" id="00N9000000FSfod" name="00N9000000FSfod" value="TPS Website ">
+<input type="hidden" id="00N0o00000NzkJl" name="00N0o00000NzkJl" value="Microsite">
+<input type="hidden" id="retURL" name="retURL" value="https://solaroof.tatapower.com/thank-you.html">
+<input type="hidden" id="recordType" name="recordType" value="01290000001BYI5AAO">
+
+<!--
+                                    <div class="form-inputs">
+                                        <span class="mx-3 fs-22 form-label text-uppercase">Enquire Now</span>
+                                    </div>
+
+                                    <div class="form-wrap my-3">
+
+                                        <div class="radio-btn d-flex justify-content-start align-item-center mb-3 mr-3">
+                                            <p class="font-poppins m-0 ml-2"> I'm looking for </p>
+                                            <div class="custom-control custom-radio ml-4">
+                                                <input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
+                                                <label class="custom-control-label m-0" for="customRadio">Residential</label>
+                                            </div>
+                                            <div class="custom-control custom-radio ml-4 ">
+                                                <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
+                                                <label class="custom-control-label m-0" for="customRadio2">Non Residential</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-inputs d-flex align-item-center flex-wrap">
+                                            <input type="text" placeholder="Name*" required>
+                                            <input type="number" placeholder="Mobile*" required>
+                                            <input type="email" placeholder="Email" > -->
+                                            <input type="submit" id="subbut" value="Submit Your Interest" class="bg-color-white">
+                                        </div>
+                                        <span class="agree_text">I agree to the Tata Power <a href="https://www.tatapowersolar.com/terms-of-use/" target="_blank">Terms of Use </a></span>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="roof-top-solar font-gotham padding-v-100" id="roof-top" data-aos="fade-up">
+            <div class="container">
+               <div class="row ">
+                <!--
+                   <div class="col-md-5 order-3 py-3" data-aos="fade-right">
+                       <div class="roof-top-sec">
+                           <h6 class="color-primery fs-14">What is Solar Rooftop?</h6>
+                           <h3 class="color-blue fs-36 text-uppercase mb-4">How Does Rooftop System Work?</h3>
+                           <p class="font-poppins">A solar rooftop system typically consists of solar modules, solar inverter(s) and other electrical components such as meter(s), cables etc. Any excess electricity generated is exported to the national electricity grid and owner's account is credited accordingly, subject to prevailing regulatory policies.</p>
+                       </div>
+                       <div class="more-btn font-poppins">
+                        <a data-fancybox="faqs-light-box" src="#faqs-light-box" onClick="gtag('event', 'Popup', {'event_category' : 'Popup Click', 'event_label' : 'Solar rooftop works - Know more'});" href="javascript:;" class="fs-18 color-black">Know more <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                       </div>
+                   </div>
+                   <div class="col-md-1 order-2 d-none-mobile"></div>
+                   <div class="col-md-6 order-1 mb-2" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                       <div class="roof-top-img">
+                           <img src="images/roof-top-solar.jpg" alt="">
+                       </div>
+                   </div>
+                   -->
+                   <div class="col-md-5">
+                    <!-- <a data-fancybox="" href="https://www.youtube.com/embed/AEj0DTMKJSQ"> -->
+                    <div class="left_video_box">
+                        <video playsinline controls autoplay muted id="myVideo">
+                            <!-- <source src="video/arohan_banner_video.webm’" type=’video/webm’>
+                            <source src="video/arohan_banner_video.ogv" type=’video/ogg’> -->
+                            <source src="video/Main1.mp4" id="video2" type="video/mp4">
+                        </video>
+                        <!--<img src="images/left_sec_image.jpg" alt="image" />
+                         <div class="more-btn font-poppins">
+                            <div class="fs-18 color-black know_more_button">
+                            Know more <i class="fa fa-arrow-right" aria-hidden="true"></i> </div>
+                        </div> -->
+                    </div>
+                <!-- </a> -->
+                   </div>
+                   <div class="col-md-7">
+                    <div class="right_step_box">
+                        <h6 class="fs-14">Easy and Convenient Process</h6>
+                        <h3 class="fs-36 text-uppercase">Go Solar in 3 easy steps</h3>
+                        <div class="solar_step_main_box">
+                            <div class="solar_step_first_box">
+                                <img src="images/solar_no_round_image.png"  class="lazyload no_image" />
+                                <img src="images/image_1.jpg" alt="image"  class="lazyload desk_image" />
+                                <img src="images/mob_light_image.png" alt="icon"  class="lazyload mob_light_image" />
+                                <div class="first_mid_box">
+                                        <div class="enquery_box_one"><img src="images/enquery_icon.jpg" alt="icon"  class="lazyload" /> Enquire Now </div>
+                                        <div class="enquery_box_one"><img src="images/no_icon.jpg" alt="icon"  class="lazyload" /><div><span class="call_text">Call Toll Free Number:</span> <span>1800 25 77777</span> </div>  </div>
+                                        <div class="enquery_box_one"><img src="images/sms_icon.jpg" alt="icon"  class="lazyload" /><div><span class="call_text">SMS Solar to </span> <span>56677</span> </div>  </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="solar_step_first_box">
+                                <img src="images/two_icon.png"  class="lazyload no_image" />
+                                <img src="images/image_2.jpg" alt="image"  class="lazyload desk_image" />
+                                <img src="images/help_icon.jpg" alt="icon"  class="lazyload mob_light_image" />
+                                <div class="first_mid_box two">
+                                        <h4>Our<br /> Channel Partners<br /> help you</h4>
+                                        <p>choose the configuration best suited for your needs.</p>  
+                                </div>
+                            </div>
+                            <div class="solar_step_first_box">
+                                <img src="images/three_icon.png"  class="lazyload no_image" />
+                                <img src="images/image_3.jpg" alt="image"  class="lazyload desk_image" />
+                                <img src="images/relax_icon.jpg" alt="icon"  class="lazyload mob_light_image" />
+                                    <div class="first_mid_box two">
+                                        <h4>Sit back and<br /> 
+                                            relax</h4>
+                                        <p>as your Solar Rooftop system is delivered, installed and commissioned.</p>  
+                                </div>
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+					   <div class="more-btn font-poppins" style="text-align: left; margin: 20px 0 0;">
+                        <a data-fancybox="faqs-light-box" src="#faqs-light-box" href="javascript:;" class="fs-18 color-black gtmsolarrooftopworksknowmore">Some FAQs <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                       </div>
+                   </div>
+               </div> 
+            </div>
+        </section>
+
+        <section class="benefits-solar padding-v-100" id="why-go-solar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10" data-aos="flip-left" data-aos-duration="1500">
+                        <div class="benefits-cont bg-color-primery color-white font-gotham p-3">
+                            <div class="roof-top-sec">
+                                <h6 class="fs-14">Why go Solar? </h6>
+                                <h3 class="fs-36 text-uppercase"> Benefits of going Solar </h3>
+                                <p class="font-poppins">Solar solutions installed on your roof or ground are ideal for harnessing the sun’s energy. Not only do they save electricity costs, but also help you fulfill you role as a responsible citizen by contributing positively to the environment.</p>
+                            </div>
+
+                            <div class="benefits-icon font-poppins">
+                                <ul>
+                                    <li>
+                                        <img src="images/benefits-01.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Up to 80%+ electricity<BR>bill savings</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/benefits-02.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Good for<br>the Environment</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/benefits-03.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Minimum<br>Maintenance</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/benefits-04.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Green Building<br>Certifications</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/benefits-05.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Scalable<br>Design</p>
+                                    </li>
+                                    <li>
+                                        <img src="images/benefits-06.png" alt=""  class="lazyload">
+                                        <p class="font-poppins">Accelerated Depreciation <br>for businesses</p>
+                                    </li>
+                                </ul>
+                                <div class="more-btn font-poppins ">
+                                    <a data-fancybox="benefits-light-box" src="#benefits-light-box"  href="javascript:;" class="fs-18 color-white gtmbenefitsofgoingsolarknowmore">Know more <i class="fa fa-arrow-right bg-color-white" aria-hidden="true"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose padding-v-100" id="why-choose-us">
+            <div class="container">
+                <div class="row"  data-aos="fade-up">
+                   <div class="col-md-8">
+                        <div class="roof-top-sec font-gotham">
+                            <!-- <span class="strock-text">why us</span> -->
+                            <h6 class="color-primery fs-14">Deciding your Solar Partner</h6>
+                            <h3 class="color-blue fs-36 text-uppercase mb-4">Why Choose Tata Power Solaroof</h3>
+                        </div>
+                   </div> 
+                   <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <div class="more-btn font-poppins">
+                            <a data-fancybox="why-light-box" src="#why-light-box" href="javascript:;" class="fs-18 color-black gtmwhychoosetatapowersolarknowmore">
+                            Know more <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                        </div>
+                   </div> 
+                </div>
+                <div class="row font-poppins my-5">
+                    <div class="choose-5 d-flex justify-content-around flex-wrap width-100">
+                        <div class="choose-reason">
+                            <div class="img-sec">
+                                <img src="images/why-05.png" alt=""  class="lazyload">
+                            </div>
+                            <p class="fs-16">Ranked No. 1 Rooftop solar brand for 6 years in a row</p>
+                        </div>
+
+                        <div class="choose-reason">
+                            <div class="img-sec">
+                                <img src="images/why-02.png" alt=""  class="lazyload">
+                            </div>
+                            <p class="fs-16">Over 30 years of expertise, Tata quality and engineering provides highest generation from solar</p>
+                        </div>
+                        <div class="choose-reason">
+                            <div class="img-sec">
+                                <img src="images/why-07.png" alt=""  class="lazyload">
+                            </div>
+                            <p class="fs-16">Lifetime service and post-sales support</p>
+                        </div>
+
+                        
+
+                        <div class="choose-reason">
+                            <div class="img-sec">
+                                <img src="images/why-08.png" alt=""  class="lazyload">
+                            </div>
+                            <p class="fs-16">Zero compromise policy to safety</p>
+                        </div>
+
+                        <div class="choose-reason">
+                            <div class="img-sec">
+                                <img src="images/why-09.png" alt=""  class="lazyload">
+                            </div>
+                            <p class="fs-16">One Stop Solution Provider, Easy Financing Options</p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="choose-need padding-v-100" id="product-range">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="roof-top-sec font-gotham">
+                            <!-- <span class="strock-text" data-aos="fade-down" data-aos-duration="1000">what we make</span> -->
+                            <h6 class="color-primery fs-14">Choose as per your need </h6>
+                            <h3 class="color-blue fs-36 text-uppercase mb-4">Product range</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="choose-need-slider font-poppins text-bold">
+                            <ul class="my-3">
+                                <li>
+                                    <a class="abs-anchor gtmgridconnectedsolarsystem" data-fancybox src="#p-range-1" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider1.jpg" alt="" >
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Grid Connected Solar System  </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Grid Connected Solar System'});" href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmbatterybasedsolarsystem" data-fancybox src="#p-range-2" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider2.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Battery Based Solar System </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Battery Based Solar System'});" href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmmicroinverterbasedgridconnectedsystem" data-fancybox src="#p-range-3" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider3.jpg" alt="" >
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18">Micro inverter based grid connected system </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Micro inverter based grid connected system'});" href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmsolartree" data-fancybox src="#p-range-4" href="javascript:;"></a>
+                                    <div class="slider-cont d-block" >
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider4.jpg" alt="" >
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Solar Tree </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Solar Tree'});" href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmsolarpowershade" data-fancybox src="#p-range-5" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider5.jpg" alt="" >
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Solar Power Shade (Artefact) </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmsolarbalcony" data-fancybox src="#p-range-6" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img data-lazy="images/slider6.jpg" alt="" >
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18">Solar Balcony </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a href="#" class="fs-18 color-black"><i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slider-pops" style="display: none;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="font-poppins text-bold">
+                        <ul class="my-3">
+                            <li>
+                                <div class="slider-cont" id="p-range-1">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider1.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Grid Connected Solar System </p>
+                                            <ul class="light-b-desc font-poppins pl-5">
+                                                <li><p>Product range from 1 kW to multiple MWs </p></li>
+                                                <li><p>Best quality solar panels, inverters & other components for maximum output, design life</p></li>
+                                                <li><p>Remote monitoring on mobile & web interface </p></li>
+                                                <li><p>Suitable for any customer segment with shadow-free roof / ground area </p></li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-2">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider2.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Battery Based Solar System </p>
+                                        <ul class="light-b-desc font-poppins pl-5">
+                                            <li><p> Suitable for homes, offices, industries etc. where grid reliability is problematic</p></li>
+                                            <li><p>  Off-grid systems: Power critical lighting loads, without grid export functionality </p></li>
+                                            <li><p>  Hybrid systems: Power heavy load, export excess generation to grid & can also complement DG sets</p></li>
+                                            <li><p> Advance battery protection logic</p></li>
+                                            <li><p> Variants with both lead acid & Li Ion batteries available </p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-3">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider3.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Micro inverter based grid connected system </p>
+                                        <ul class="light-b-desc font-poppins pl-5">
+                                            <li><p> Designed for Villas, Bungalows etc</p></li>
+                                            <li><p>Flexibility: suitable for different tilt and azimuth angles</p></li>
+                                            <li><p>Module level MPPT and monitoring: higher yield in cases of partial shadow, soiling</p></li>
+                                            <li><p>Superior Safety: No aggregation of Direct Current on roof </p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-4">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider4.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center">Solar Tree</p>
+                                        <ul class="light-b-desc font-poppins pl-5">
+                                        <li><p>Position yourself as a Sustainability Champion while benefitting from Solar</p></li>
+                                            <li><p>Suitable for Villas, Industries (Lawns), Housing societies, schools, resorts etc</p></li>
+                                            <li><p>10 module & 16 module variants available</p></li>
+                                            <li><p>Dimensions: 7m (L) * 7m (W) * 4.5m (H); 2.5m clear distance from ground</p></li>
+                                           <li><p> Tubular steel structure</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-5">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider5.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Solar Power Shade (Artefact) </p>
+                                        <ul class="light-b-desc font-poppins pl-5">
+                                            <li><p> This innovative solution helps you create a fun sit-out space while benefitting from the advantages of solar</p></li>
+                                            <li><p>   Suitable for Villas, housing societies, resorts, roof top sitting areas etc</p></li>
+                                            <li><p>  18 modules (6*3) array configuration</p></li>
+                                            <li><p>  Dimensions: 6m (L) * 6m (W) * 3.5m (H); 2.5m clear distance from ground</p></li>
+                                            <li><p>   Tubular steel column & trusses </p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-6">
+                                    <div class="slider-img-sec">
+                                        <img src="images/slider6.jpg" alt=""  class="lazyload">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Solar Balcony </p>
+                                        <ul class="light-b-desc font-poppins pl-5">
+                                            <li><p> Enjoy the benefits of Solar even if you don't have your "own" "roof" </p></li>
+                                            <li><p>Suitable for Apartments, Commercial Buildings etc</p></li>
+                                            <li><p>Variants with battery storage & micro-inverters available. </p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="roof-top padding-v-100" id="finance-schemes"> 
+            <div class="container">
+                <div class="row" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="col-md-12">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+                            <!-- <span class="strock-text strock-center font-gotham" data-aos="fade-down" data-aos-duration="1000">easy Finance</span> -->
+                            <h6 class="color-primery fs-14"> Going Solar has never been this Easy & Affordable</h6>
+                            <h3 class="color-blue fs-36 text-uppercase mb-4">Attractive Financing Schemes for <br/> Our Rooftop Customers</h3>
+                            <p class="font-poppins">Take the right step into the world of Solar Power Solutions with our Hassle-free and Easy Financing<br/> Schemes for both Residential Customers as well as SMEs and Corporates.</p>
+                            <div class="newHeading"><h2 class="fs-36">Now Avail SBI Surya Shakti Preferred Easy Financing</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row font-poppins my-5">
+                    <div class="col-md-6" data-aos="fade-down" data-aos-duration="1000">
+                        <div class="roof-top-img-sec">
+                            <img src="images/roof-top1.jpg" alt="roof-top1.jpg"  class="lazyload">
+                            <div class="roof-top-img-cont ">
+                                <h3 class="color-blue fs-26 py-4 m-0"> Solar Solutions for Homes </h3> 
+                                <div class="more-btn font-poppins">
+                                    <a  data-fancybox="finance-light-box2"
+                                        src="#finance-light-box2" href="javascript:;"
+                                        class="fs-18 color-black gtmsolarsolutionsforhomes"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="roof-top-img-sec">
+                            <img src="images/roof-top2.jpg" alt="roof-top1.jpg"  class="lazyload">
+                            <div class="roof-top-img-cont ">
+                                <h3 class="color-blue fs-26 py-4 m-0"> Solar Solutions for Businesses </h3> 
+                                <div class="more-btn font-poppins">
+
+                                    <a  data-fancybox="finance-light-box"
+                                        src="#finance-light-box" href="javascript:;"
+                                        class="fs-18 color-black gtmsolarsolutionsforbusiness"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- light box of roof-top  -->
+
+        <div class="light-box smartFinanceSchemesPopup" id="finance-light-box" style="display: none;">
+            <div class="smartFinanceSchemesPopupPart1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center font-gotham">
+                            <div class="roof-top-sec mb-5">
+                                <h3 class="color-blue fs-36 text-uppercase mb-4"> Smart Finance Schemes for Powering your Business
+                                </h3>
+                                <!-- <p class="font-poppins"> A Hassle-free, one-of-a-kind finance scheme to Make Your Business Go Solar
+                                    Minimize your Energy Bills and Save More to Power your Business</p> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6 border-right">
+                            <h6 class="color-primery fs-18 mb-5">CAPEX Financing</h6>
+                            <ul class="camp-cont font-poppins mb-5">
+            
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="mr-4"><img src="images/finance-buss-01.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 ">Low Interest Rates </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/finance-buss-02.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 "> Minimum Documentation </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/finance-buss-03.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 "> No Collaterals </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/finance-buss-04.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 "> Quick Processing Speed </h6>
+                                </li>
+            
+                            </ul>
+                            <ul class="light-b-desc font-poppins pl-2 mb-5">
+                                <li><p>CAPEX through PSUs and NBFCs</p></li>
+                                <li><p>Key features: 5 -15 years tenure, 25 - 30% down payment, RoI – 7.5 - 14% </p></li>
+                                <li><p>Usually, collateral required from 25 - 50% </p></li>
+                                <li><p>Collateral-free option also available under an exclusive scheme for Tata Power customers</p></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 pl-4">
+                            <h6 class="color-primery fs-18 mb-5">OPEX Financing</h6>
+                            <ul class="camp-cont font-poppins mb-5">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/finance-buss-05.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 ">Pay-as-you-go (PPA)</h6>
+                                 </li>
+                                 <li class="mb-3 d-flex align-items-center">
+                                     <span class="bg-color-primery mr-4"><img src="images/finance-buss-06.png" alt=""  class="lazyload"></span>
+                                     <h6 class="color-black fs-18 ">Financial Lease</h6>
+                                  </li>
+                                  <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/finance-buss-07.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-black fs-18 ">Operational Lease</h6>
+                                </li>
+                            </ul>
+                            <ul class="light-b-desc font-poppins pl-2 finbutt mb-5">
+                                <li><p>Zero or minimal upfront payment </p></li>
+                                <li><p>Savings from Day 1: Monthly outflow much less than regular electricity bills </p></li>
+                                <li><p>Tenure: 5 - 25 years </p></li>
+                                <li><p>Asset can be in own name or financier’s name </p></li>
+                                <li><p>No hassles of plant maintenance or insurance </p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smartFinanceSchemesPopupPart2">
+            	<div class="container">
+                	<div class="ssfhp2SbiLogo"><img src="images/sbiIcon.png" alt=""  class="lazyload"></div>
+                    <div class="row">
+                        <div class="col-md-12 text-center font-gotham">
+                            <div class="roof-top-sec mb-5">
+                                <h3 class="color-white fs-36 mb-4">SBI Surya Shakti Preferred Easy Financing for powering your Business</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="camp-cont font-poppins mb-5">
+            
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="mr-4"><img src="images/ssfhp2SbiListIcon-01.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> 20% Down Payment </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-02.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Quick Sanction within 72 hours </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-03.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Loan tenure up to 10 years </h6>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="camp-cont font-poppins mb-5">
+            
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-05.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Collateral-free </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-06.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Interest rates starting @ 7% P.A. </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-07.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> O&M and Insurance Benefits </h6>
+                                </li>
+            
+                            </ul>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--close light box of roof-top  -->
+        <!-- light box of roof-top  -->
+
+        <div class="light-box solarSolutionsForHomesPopup" id="finance-light-box2" style="display: none;">
+        	<div class="solarSolutionsForHomesPopupPart1">
+            	<div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center font-gotham">
+                        <div class="roof-top-sec mb-5">
+                            <h3 class="color-blue fs-36 text-uppercase mb-4"> Smart Finance Schemes for your Home</h3>
+                            <p class="font-poppins"> Invest in solar with Rooftop Solar Finance Scheme for smart homes. Go Solar - Pledge for a cleaner and greener environment.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="camp-cont font-poppins mb-5">
+        
+                            <li class="mb-3 d-flex align-items-center">
+                                <span class="mr-4"><img src="images/finance-buss-01.png" alt=""  class="lazyload"></span>
+                                <h6 class="color-black fs-18 ">Instant EMI Options</h6>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center">
+                                <span class="bg-color-primery mr-4"><img src="images/finance-buss-02.png" alt=""  class="lazyload"></span>
+                                <h6 class="color-black fs-18 "> Minimum Documentation</h6>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center">
+                                <span class="bg-color-primery mr-4"><img src="images/finance-buss-03.png" alt=""  class="lazyload"></span>
+                                <h6 class="color-black fs-18 "> No Collaterals </h6>
+                            </li>
+                           
+        
+                        </ul>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="camp-cont font-poppins mb-5">
+        
+                            <li class="mb-3 d-flex align-items-center">
+                                <span class="bg-color-primery mr-4"><img src="images/finance-buss-08.png" alt=""  class="lazyload"></span>
+                                <h6 class="color-black fs-18 "> Low Interest Rates </h6>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center">
+                                <span class="bg-color-primery mr-4"><img src="images/finance-buss-09.png" alt=""  class="lazyload"></span>
+                                <h6 class="color-black fs-18 "> Doorstep Services </h6>
+                            </li>
+        
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+            <div class="solarSolutionsForHomesPopupPart2">
+            	<div class="container">
+                	<div class="ssfhp2SbiLogo"><img src="images/sbiIcon.png" alt=""  class="lazyload"></div>
+                    <div class="row">
+                        <div class="col-md-12 text-center font-gotham">
+                            <div class="roof-top-sec mb-5">
+                                <h3 class="color-white fs-36 mb-4">SBI Surya Shakti Preferred Easy Financing for your Home</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="camp-cont font-poppins mb-5">
+            
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="mr-4"><img src="images/ssfhp2SbiListIcon-01.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> 20% Down Payment </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-02.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Quick Sanction within 72 hours </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-03.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Loan tenure up to 10 years </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-04.png" alt=""  class="lazyload"></span>
+                                    <h6 class="color-white fs-18 "> Existing Salary A/c holder with SBI/ Existing SBI Employees </h6>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="camp-cont font-poppins mb-5">
+            
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-05.png"  class="lazyload" alt=""></span>
+                                    <h6 class="color-white fs-18 "> Collateral-free </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-06.png"  class="lazyload" alt=""></span>
+                                    <h6 class="color-white fs-18 "> Interest rates starting @ 7% P.A. </h6>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <span class="bg-color-primery mr-4"><img src="images/ssfhp2SbiListIcon-07.png"  class="lazyload" alt=""></span>
+                                    <h6 class="color-white fs-18 "> O&M and Insurance Benefits </h6>
+                                </li>
+            
+                            </ul>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--close light box of roof-top  -->
+
+
+
+
+        <section class="earning-calc mt-5" data-aos="fade-up">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <div class="closeable-right-box bg-color-primery">
+                            <div class="box-cont main-cont-sec font-gotham">
+                                <!-- <img src="images/earn1.png" alt="calc.png"> -->
+                                <h3 class="color-white text-uppercase"><span>Insurance Schemes </span></h3>
+                                <p class="font-poppins color-white" style="line-height: 1.4em;">
+                                   Insure your solar asset and secure complete peace of mind in case of any damage resulting from natural calamities and other adverse incidents.
+                                </p>
+                                <a href="images/SOLAR INSURANCE.pdf" target="_blank" class="color-black bg-color-white font-poppins px-4 py-1 width-100 gtmcheckinsurancepolicy"> Check Insurance Policy </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="success-story-sec padding-v-100 text-center" id="projects" data-aos="fade-up"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 py-4">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+                            <!-- <span class="strock-text font-gotham" data-aos="fade-down" data-aos-duration="1000">Installations</span> -->
+                            <h3 class="color-blue fs-36 text-uppercase">Key Installations</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 p-0">
+                        <div class="success-story-slider">
+                            <div class="roof-top-sec width-100 font-gotham text-left mb-3">
+                                <h6 class="color-primery fs-18 p-2">Residential </h6>  
+                            </div>
+                            
+                            <ul>
+                                <li>
+                                    <div class="slider-cont bg-light-gray">
+                                        <div class="slider-img-sec">
+                                            <img src="images/anert.jpg" alt="" class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-primery fs-26 text-bold text-left text-uppercase mb-4">
+                                                8000+ Rooftop Solar Systems – ANERT, Kerala
+                                            </h6>
+                                            <ul class="text-left color-black">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Savings for families & the Kerala Government </h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> Total 10 MW+ installations of 1-5 kW each</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> Unique roofs - unique designs </h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> Robust Systems customized for High Wind Speeds </h6> </li>
+                                            </ul>
+                                            <div class="font-poppins">
+                                            <a href="https://www.tatapowersolar.com/project/10-8-mw-rooftop-solar-power-system-anert-kerala/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=residential_project_card" target="_blank" class="fs-16 color-black">Know more</a>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-light-gray   ">
+                                        <div class="slider-img-sec">
+                                            <img src="images/suvidha.jpg" alt=""  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-primery fs-26 text-bold text-left text-uppercase mb-4">32 systems of 5 kW each – SUVIDHA HOUSING SOCIETY, BENGALURU, INDIA</h6>
+                                            <ul class="text-left color-black">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Annual Energy Yield: 14,400 Units*</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> CO<sub>2</sub> offset in 25 years: 252 Tonnes*</h6> </li>
+                                                <!-- <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> 32 systems commissioned </h6> </li> -->
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> Solar Panels installed on RCC roofs without drilling any holes</h6> </li>
+                                            </ul>
+                                            <div class="font-poppins">
+                                            <a href="https://www.tatapowersolar.com/project/5-25-kw-solar-system-suvidha-housing-society-bengaluru-india/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=residential_project_card" target="_blank" class="fs-16 color-black">Know more</a>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 p-0">
+                        <div class="success-story-slider">
+                            <div class="roof-top-sec width-100 font-gotham text-left m-3 ">
+                                <h6 class="color-primery fs-18">Commercial & Industrial  </h6>  
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/rssb.jpg"  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">16 MW Rooftop Solar Power System – RSSB-EES, Beas</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16">Largest Solar Rooftop Power Plant in the world, at a single site, on varied & fragile roofs</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Estimated Energy Generation: 150 lakhs kWh annually</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> CO<sub>2</sub> displacement: 19000 tonnes annually</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Fixed energy cost for 25 years</h6> </li>
+                                            </ul>
+                                             <a href="https://www.tatapowersolar.com/project/16-mw-rooftop-solar-power-system-rssb-ees-beas/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=commercial_project_card" target="_blank" class="fs-16 color-white">Know more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/cci.jpg"  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">820.8 kWp Solar Rooftop Installation – CCI Stadium, Mumbai </h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> World’s largest solar powered cricket stadium </h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Offset 840 tonnes of carbon annually</h6> </li>
+                                            </ul>
+                                             <a href="https://www.tatapowersolar.com/project/820-8-kwp-solar-rooftop-installation-cci-stadium-mumbai/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=commercial_project_card" target="_blank" class="fs-16 color-white">Know more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/dell.jpg"  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">120 kW Vertical Solar Power Farm – Dell</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> India’s largest vertical solar farm </h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> 45-meter structure built on Dell’s Bengaluru campus</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Vertical structure designed with a 30' moving tilt</h6> </li>
+                                            </ul>
+                                            <a href="https://www.tatapowersolar.com/project/120-kw-vertical-solar-power-farm-dell/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=commercial_project_card" target="_blank" class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/ge.jpg"  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">1 million kWh of solar power per year – GE</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> To generate over 1 million kWh of solar power per year at GE’s six key manufacturing and maintenance sites in India.</h6></li>
+                                            </ul>
+                                            <a href="https://www.tatapowersolar.com/project/1-million-kwh-of-solar-power-per-year-ge/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=commercial_project_card" target="_blank" class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/cochin.jpg"  class="lazyload">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">2.67 MW Solar Plant – Carport, Cochin International Airport Ltd.</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Largest Carport in India</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Spread across 20289.9 sq. m</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Installed on 27 car ports</h6> </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-white fs-16"> Offsetting 1868 tonnes of CO<sub>2</sub> annually</h6> </li>
+                                                
+                                            </ul>
+                                            <a href="https://www.tatapowersolar.com/project/2-67-mw-solar-plant-carport-cochin-international-airport-ltd/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=commercial_project_card" target="_blank" class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!--  <section class="camp roof-top-solar font-gotham mb-5">
+            <div class="container">
+               <div class="row d-flex justify-content-center">
+                   <div class="col-md-12 py-4">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+                            <h3 class="color-blue fs-36 text-uppercase mb-4"> Testimonials </h3>
+                        </div>
+                    </div>
+                   <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                    <div class="text-center">
+                        <iframe width="560" height="400" src="https://www.youtube.com/embed/qzxcZJgpu3Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                   </div>
+               </div> 
+            </div>
+        </section>-->
+
+
+        <!--<section class="easy-steps" id="step-process">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 py-4">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+                          
+                            <h6 class="color-primery fs-14">Easy and Convenient Process</h6>                      
+                            <h3 class="color-blue fs-36 text-uppercase mb-4"> Go Solar in 3 Easy Steps</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12 font-poppins">
+                        <ul class="my-3 easy-card">
+                            <li>
+                                <div class="slider-cont">
+                                    <div class="slider-img-sec">
+                                        <img src="images/easy1.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para p-3">
+                                        <ul>
+                                            <li class="mb-2 ml-0">
+                                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i><a href="#form-top"><h6 class="color-black fs-16"> Enquire Now</h6> </a></li>
+                                             <li class="mb-2 ml-0"><i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i>
+                                                <h6 class="color-black fs-16"> Call Toll Free Number:<br/> 1800 25 77777 </h6> </li>
+                                            <li class="mb-2 ml-0"><i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class="color-black fs-16"> SMS Solar to 56677 </h6> </li>
+                                           
+                                        </ul>
+                                    </div>
+                                    <div class="more-btn font-poppins">
+                                        <a href="#" class="fs-26 color-white"> 1 </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont">
+                                    <div class="slider-img-sec">
+                                        <img src="images/easy2.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para p-3">
+                                        <h6 class="color-black fs-16 "> Our Channel Partners help you choose the configuration best suited for your needs.
+                                        </h6>
+                                    </div>
+                                    <div class="more-btn font-poppins">
+                                        <a href="#" class="fs-26 color-white color-white"> 2 </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont">
+                                    <div class="slider-img-sec">
+                                        <img src="images/easy3.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para p-3">
+                                        <h6 class="color-black fs-16"> Sit back and relax as your Solar Rooftop system is delivered, installed and commissioned.</h6>
+                                    </div>
+                                    <div class="more-btn font-poppins">
+                                        <a href="#" class="fs-26 color-white"> 3 </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+		
+		<section class="roof-top-solar font-gotham mt-5" id="SolaroofianBytes" data-aos="fade-up">
+            <div class="container">
+               <div class="row d-flex justify-content-center">
+                   <div class="col-md-12 py-4">
+                    <a data-fancybox="" href="https://www.youtube.com/embed/AEj0DTMKJSQ">
+                    <div class="solar_big_video_box" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                        <img src="images/solar_big_video_image.jpg" alt="image"  class="lazyload solar_desk_image" />
+                        <img src="images/mob_solar_video_image.jpg" alt="image"  class="lazyload solar_mob_image" />
+                        <div class="solar_big_mid_box">
+                           <img src="images/play_button.png" alt="icon" />
+                            <h4>#SolaroofianBytes</h4>
+                        </div>
+                    </div>
+                </a>
+                    </div>
+               </div> 
+            </div>
+        </section>
+
+        <section class="roof-top-solar font-gotham mt-5" data-aos="fade-up">
+            <div class="container">
+               <div class="row d-flex justify-content-center">
+                   <div class="col-md-12 py-4">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+                            <h3 class="color-blue fs-36 text-uppercase"> FIND A DEALER </h3>
+                        </div>
+                    </div>
+                   <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                    <div class="text-center font-poppins">
+                        <p>Tata Power products are available through an extensive network of 250+ channel partners present across India.</p>
+                        <a href="https://www.tatapowersolar.com/contact-us/find-a-dealer/?utm_source=tps_microsite&utm_medium=rts_owned_assets&utm_campaign=locate_dealer_card" target="_blank" class="fs-18 width-100 color-white bg-color-primery font-poppins px-4 py-1 text-center">Locate Dealer</a>
+                    </div>
+                   </div>
+               </div> 
+            </div>
+        </section>
+
+<section class="roof-top-solar font-gotham padding-v-100" data-aos="fade-up">
+            <div class="container">
+            <h3 class="color-blue fs-36 text-uppercase mb-4 py-4 text-center"> Your Solaroof, Your Earning Asset </h3>
+                <div class="row">
+                <div class="col-md-6 aos-init aos-animate" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                    <div class="text-center">
+                        <iframe  width="100%" height="400"  src="https://www.youtube.com/embed/DXpdR6EWSGI"  srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/DXpdR6EWSGI><img src=https://img.youtube.com/vi/DXpdR6EWSGI/hqdefault.jpg alt=''><span>▶</span></a>"  frameborder="0"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen  title=""></iframe>
+						
+                    </div>
+                   </div>
+                   <div class="col-md-6 aos-init aos-animate" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500">
+                    <div class="text-center">
+                        	<iframe  width="100%" height="400"  src="https://www.youtube.com/embed/cBwHwCYmuK0"  srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/cBwHwCYmuK0><img src=https://img.youtube.com/vi/cBwHwCYmuK0/hqdefault.jpg alt=''><span>▶</span></a>"  frameborder="0"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen  title=""></iframe>
+						
+                    </div>
+                   </div> 
+                </div>
+			</div>
+        </section>
+
+
+		
+			<section class="camp roof-top-solar font-gotham padding-v-100" id="tdsource" data-aos="fade-up">
+            <div class="container">
+               
+                   <p><sup>*</sup>Estimation of savings is based on 5 kW solar installation for an entity consuming 1000 units of electricity per month of DISCOM provided electricity with net metering regulation permitted in the state and per kW solar power generation of 1200-1400 units per annum.  Savings may vary based on individual customer’s solar deployment, regulations, tariff structure and site conditions.</p>
+				   <p><sup>#</sup>Independent Research body: Bridge to India, Solar Compass report 2021</p>
+                   
+                   
+
+               
+            </div>
+        </section>
+		
+		
+
+        
+        <footer class="bg-color-gray-d position-relative mt-5">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-md-6 mt-5 pb-4">
+                        <div class="foo-left">
+                            <div class="foo-logo mb-4">
+                               <a href="index.html"> <img src="images/tata-solar-logo.png" alt="tata-solar-logo.png"  class="lazyload"></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 pb-4 text-right">
+                        <div class="foo-right mt-5">
+                            <div class="foo-social mb-4">
+                                <ul class="d-flex justify-content-end">
+                                    <li><a href="https://twitter.com/TATAPOWERSOLAR" target="_blank"></a><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                                    <li><a href="https://www.facebook.com/TataPowerSolar/" target="_blank"></a><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                                    <li><a href="https://www.linkedin.com/company/3034068" target="_blank"></a><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+                                    <li><a href="https://www.youtube.com/channel/UCHiqP8Mu-jWdaCFwu7kVLeg" target="_blank"></a><i class="fa fa-youtube-play" aria-hidden="true"></i></li>
+                                </ul>
+                            </div>
+                            <div class="foo-policy font-poppins mb-3">
+                                <ul class="d-flex justify-content-end">
+                                    <li><a href="https://www.tatapowersolar.com/legal-disclaimer/" target="_blank">Legal Disclaimer </a></li>
+                                    <li><a href="https://www.tatapowersolar.com/privacy-policy/" target="_blank">Privacy Policy</a></li>
+                                    <li><a href="https://www.tatapowersolar.com/terms-of-use/" target="_blank">Terms of Use </a></li>
+                                </ul>
+                            </div>
+                            <div class="foo-cp font-poppins color-gray ">
+                                <p class="fs-12"> &copy; Tata Power Solar Systems Ltd. 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+    </section>
+    
+<!-- light box of faq -->
+
+        <section class="light-box" id="faqs-light-box" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 font-gotham">
+                        <div class="">
+                            <h3 class="color-blue fs-36 text-uppercase mb-4"> How does Solar system work? 
+                            </h3>
+                            <p class="font-poppins">
+                                A solar rooftop system typically consists of solar modules, solar inverter(s) and other electrical components such as meter(s), cables etc. <br>
+                                Any excess electricity generated is exported to the national electricity grid and owner's account is credited accordingly, subject to prevailing regulatory policies.
+                                <br><br>
+                            </p>
+                                <img src="images/roof-top-solar.jpg"><br>
+                                <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/solar-works1.png"  class="lazyload"></div>
+                                <div class="col-md-4"><strong class="color-primery fs-16">Solar Modules</strong>
+                                <p class="font-poppins">Converts sunlight into DC electricity</p></div>
+                                <div class="col-md-2 mb-4"><img src="images/solar-works2.png"  class="lazyload"></div>
+                                <div class="col-md-4"><strong class="color-primery fs-16">Inverter</strong>
+                                <p class="font-poppins">Converts DC Electricity into usable AC electricity</p></div>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/solar-works3.png"  class="lazyload"></div>
+                                <div class="col-md-4"><strong class="color-primery fs-16"> Meter</strong>
+                                <p class="font-poppins">Measure how much power your premises use and any excess power that the solar system feeds to the grid</p></div>
+                                <div class="col-md-2 mb-4"><img src="images/solar-works4.png"  class="lazyload"></div>
+                                <div class="col-md-4"><strong class="color-primery fs-16"> National Electicity Grid</strong>
+                                <p class="font-poppins">Supplies electricity to the premises</p></div>
+                                </div>
+                                <p class="font-poppins">
+                                <strong class="color-primery fs-14">How do I ascertain how big a system would be required for my use?</strong><br/>
+                                The capacity of solar installation depends on:<br/>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Load requirement you want to power through solar / quantum of electricity bill: Varies from state to state; on average, approx. 1 kW system is required for Rs. 1000 electricity bill / month.<br/>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Shadow free space available: Typically, 1 kW system requires 100 sq ft of shadow free space<br/>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Sanctioned load: Varies from state to state; capacity greater than sanctioned load typically not permitted.<br/><br/>
+                                <strong class="color-primery fs-14">How do Solar Modules work?</strong><br/>
+                                Solar modules are made of Silicon wafers, a semiconductor.<br/>
+                                Photons (particles of light) from the sun's radiation knock out electrons when they fall on the wafers and a Direct Current electricity flow is established using the semiconductor properties.
+                                                <br/><br/>
+
+<strong class="color-primery fs-14">Does solar system produce electricity from solar during grid outage</strong><br/>
+                                                    The grid connected solar rooftop system does not produce electricity from solar during grid outage.<br/>
+                                                        Solar systems that are equipped with batteries not only provide backup but also generate electricity using solar during grid outage. The same is explained in detail in Products Section.<br/><br/>
+                                                   
+
+<strong class="color-primery fs-14">If no body is at home during day time, is solar generation wasted?</strong><br/>
+                                               No, solar electricity is not wasted if it's not being consumed by the premises. During daytime, solar system exports any excess solar electricity not used by the premises to the national electricity grid. Similarly, at night, excess electricity required by the premises is imported from the grid as solar generation is absent at night.<br/>
+                                                        Meter(s) installed along with solar system keep a record of excess generation exported to the grid and imported from the grid. At the end of each period, customer is credited for excess generation exported to the grid as per prevailing state policy, and charged only for net consumption from the grid.
+                                                   
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--close light box of faq  -->
+        <!-- light box of benefits -->
+
+        <section class="light-box" id="benefits-light-box" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 font-gotham">
+                        <div class="">
+                            <h3 class="color-blue fs-36 text-uppercase mb-4">BENEFITS OF GOING SOLAR
+                            </h3>
+                            <p class="font-poppins">
+                                <strong class="color-primery fs-14">Why Go Solar?</strong><br/>
+                                Solar solutions installed on your roof or ground are ideal for harnessing the sun's energy. Not only do they save electricity costs, but also help you fulfill your role as a responsible citizen by contributing positively to the environment.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-2"><img src="images/benefits-01.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Up to 80%+ electricity bill savings</strong>
+                            <p class="font-poppins">
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Over 25 years lifetime of solar, upto Rs 2 Cr+ savings for MSMEs and upto Rs 10 lakh+ savings for residential customers<br>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Typically, payback period of 4-5 years<br>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Grid independence against rising tariff: Electricity tariff has increased by more than 50% in 5 years' time in many states
+                            </p></div>
+                            </div>
+
+                             <div class="row">
+                                <div class="col-md-2"><img src="images/benefits-02.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Good For The Environment</strong>
+                            <p class="font-poppins">
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> For MSMEs, upto 3000+ tonnes of carbon emission mitigated over a lifetime of solar solution use, equivalent to the planting of upto 5000+ tress<br>
+                                <i class="fa fa-arrow-right color-primery fs-14 mr-2" aria-hidden="true"></i> Similarly, for Residential, upto 150+ tonnes of carbon emission mitigated over a lifetime of solar solution use, equivalent to the planting of upto 250+ trees
+                            </p></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/benefits-03.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Minimum Maintenance</strong>
+                            <p class="font-poppins">Solar rooftop system has no moving parts</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/benefits-04.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Green Building Certifications</strong>
+                            <p class="font-poppins">Additional points for solar solutions in certifications such as IGBC, LEED etc</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/benefits-05.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Scalable Design</strong>
+                            <p class="font-poppins">For easy upgrade & future expansion requirements</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/benefits-06.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Accelerated Depreciation for businesses</strong>
+                            <p class="font-poppins">Upto 40% accelerated depreciation in the 1st year of commissioning as tax benefit in the case of businesses</p>
+                                </div>
+                            </div>
+
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--close light box of benefits  -->
+        <!-- light box of why -->
+
+        <section class="light-box" id="why-light-box" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 font-gotham">
+                        <div class="">
+                            <h3 class="color-blue fs-36 text-uppercase mb-4">WHY CHOOSE TATA POWER SOLAROOF
+                            </h3>
+                            <p class="font-poppins">
+                                Tata Power has brought smiles to the faces of 30,000+ customers and is consistently ranked as India's No 1 Solar Rooftop Provider<br><br>
+                                With us, you can rest assured that your money is invested well - maximize generation from solar, be assured of lifetime service support, secure safety of your premises, and above all, sit back and relax as we provide a hassle free customer experience.
+                            </p>
+                            
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-01.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Large Satisfied Customer Base</strong>
+                            <p class="my-3 font-poppins">Partner of choice for 30,000+ total & 15,000+ residential customers</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-02.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Legacy of 30+ years experience</strong>
+                            <p class="my-3 font-poppins">Only Indian solar EPC company to complete entire lifetime of a solar project</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-03.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Large Installed Base : 450+ MW</strong>
+                            <p class="my-3 font-poppins">450+ MW of rooftop & 3.5+ GW of utility scale projects for a brighter India</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-04.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">250+ Channel Partners in India</strong>
+                            <p class="my-3 font-poppins">250+ Channel Partners across different parts of India.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-05.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">No 1 Solar EPC player for 6 years</strong>
+                            <p class="my-3 font-poppins">For 6 years in a row, from 2014-2019, by Bridge To India</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-06.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Best in class generation from Solar</strong>
+                            <p class="my-3 font-poppins">Basis superior product quality, world class Engineering and Installation, our systems are designed to maximize generation from solar.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-07.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Lifetime service and support</strong>
+                            <p class="my-3 font-poppins">Rapid support through extensive company managed service network spread across India.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-08.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">Superior Safety</strong>
+                            <p class="my-3 font-poppins">Designed to withstand adverse weather conditions and prevent any inadvertent mishap</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mb-4"><img src="images/why-09.png"  class="lazyload"></div>
+                                <div class="col-md-10"><strong class="color-primery fs-16">One Stop Solution for all your Needs</strong>
+                            <p class="my-3 font-poppins">We take care of all processes and allied needs, including but not limited to supply of all material for solar system, liaising for regulatory approvals, solar financing, O&M packages, access to generation data, insurance etc.</p>
+                                </div>
+                            </div>
+                            <br>
+                            <strong class="color-primery fs-18">Awards & Recognition</strong>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award1.png"  class="lazyload">
+                                <p class="my-3 font-poppins">Bridge To India, 2014-2019</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award2.png"  class="lazyload">
+                                <p class="my-3 font-poppins">India Rooftop Solar Congress, 2020</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award3.png"  class="lazyload">
+                                <p class="my-3 font-poppins">National Excellence Awards, MNRE, 2016</p>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award4.png"  class="lazyload">
+                                <p class="my-3 font-poppins">First View Ventures & Solar Quarter, 2019</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award5.png"  class="lazyload">
+                                <p class="my-3 font-poppins">Punjab & Haryana State Annual Solar Awards 2019</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award6.png"  class="lazyload">
+                                <p class="my-3 font-poppins">For RSSB 12MW project, REI 2016</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award7.png"  class="lazyload">
+                                <p class="my-3 font-poppins">For RSSB 12MW project, 2016</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award8.png"  class="lazyload">
+                                <p class="my-3 font-poppins">FirstView Group, 2015</p>
+                                </div>
+                                <div class="col-sm-6 col-md-4 mb-4 text-center"><img src="images/award9.png"  class="lazyload">
+                                <p class="my-3 font-poppins">Indian Rooftop Solar Summit 2016, FirstView Group</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--close light box of why  -->
+
+
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/jquery.matchHeight-min.js"></script>
+    <script src="js/custom.js"></script>
+	<script>
+		$(document).ready(function() {
+		$( "#fancybox-container-1 .fancybox-content" ).css( "background-color", "red" );
+		});
+	</script>
+	<!--  script for , in amount field -->
+	<script>
+        $("input.mask").each((i,ele)=>{
+         let clone=$(ele).clone(false)
+         clone.attr("type","text")
+         clone.attr("name","tmp")
+         clone.attr("id","tmp")
+         let ele1=$(ele)
+                 
+         clone.val("Monthly Electricity Bill (Rs)*")
+         //clone.val(Number(ele1.val()).toLocaleString("en"))
+         $(ele).after(clone)
+         $(ele).hide()
+         
+         clone.mouseenter(()=>{
+     
+           ele1.show()
+           clone.hide()
+         })
+         setInterval(()=>{
+           let newv=Number(ele1.val()).toLocaleString("en-IN")
+           
+           if (newv != 0) {
+                if(clone.val()!=newv){
+                     clone.val(newv)
+                   }
+            }
+            else 
+            clone.val("Monthly Electricity Bill (Rs)*")
+         },10)
+     
+         $(ele).mouseleave(()=>{
+           $(clone).show()
+           $(ele1).hide()
+         })
+         
+     
+       })
+     </script>
+	<script>
+		 $(function() {
+	$('.js-anchor-link').click(function(e){
+  e.preventDefault();
+  var target = $($(this).attr('href'));
+  if(target.length){
+    var scrollTo = target.offset().top;
+    $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+  }
+});
+			 });
+	</script>
+	
+	
+
+	
+</body>
+</html>

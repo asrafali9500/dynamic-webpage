@@ -1,0 +1,239 @@
+.hero-img-cont_banner {
+    position: absolute;
+    top: 44%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: transparent;
+    max-width: 1000px;
+    width: 85%;
+    right: 0;
+    margin: 0 auto;
+    text-align: center
+}
+
+.hero-img-cont_banner h3 {
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-family: 'Gotham';
+    font-size: 60px;
+    font-weight: 400
+}
+
+.hero-img-cont_banner h3 span {
+    color : white;
+    font-family: 'Gotham';
+    font-size: 62px;
+    font-weight: 400
+}
+
+.hero-img-cont_banner .des {
+    color: #fff;
+    font-size: 12px;
+    padding: 0 5% 0
+}
+
+.hero-img-cont_banner .des span {
+    color: #fff;
+    font-size: 12px;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 20px
+}
+
+.hero-img-cont_banner .des a {
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff
+}
+
+#tdsource {
+    text-align: center
+}
+
+#tdsource p {
+    font-size: 15px;
+    display: inline-block !important;
+    font-size: 14px
+}
+
+@media(max-width:640px) {
+    .hero-img-cont_banner h3 {
+        line-height: 1.2em;
+        font-size: 1.6em
+    }
+    .hero-img-cont_banner h3 span {
+        font-size: .75em
+    }
+    .hero-img-cont_banner .des {
+        padding: 45px 15% 0
+    }
+    .hero-img-cont_banner .des p {
+        font-size: 10px
+    }
+}
+
+.know_more_button i.fa.fa-arrow-right {
+    padding: 10px
+}
+
+.more-btn.font-poppins {
+    text-align: center
+}
+
+.right_step_box h6 {
+    color: #f58220
+}
+
+.know_more_button {
+    width: 208px;
+    height: 75px;
+    background: #fff;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 75px;
+    margin-top: -40px
+}
+
+.right_step_box h3 {
+    color: #1068b2
+}
+
+.solar_step_first_box {
+    background: #f58220;
+    width: 33.333%;
+    border-right: 1px solid #fff;
+    position: relative
+}
+
+.solar_step_main_box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 93px
+}
+
+.solar_step_first_box .no_image {
+    position: absolute;
+    left: 0;
+    top: -38px
+}
+
+.first_mid_box {
+    padding: 17px 9px;
+    color: #fff
+}
+
+.enquery_box_one {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 4px
+}
+
+.enquery_box_one img {
+    margin-right: 6px
+}
+
+span.call_text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    display: block
+}
+
+.first_mid_box.two {
+    text-align: center
+}
+
+.first_mid_box.two h4 {
+    font-size: 16px
+}
+
+.first_mid_box.two p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 18px
+}
+
+.solar_big_video_box {
+    position: relative
+}
+
+.solar_big_mid_box {
+    position: absolute;
+    bottom: 24%;
+    text-align: center;
+    width: 100%
+}
+
+.solar_big_mid_box h4 {
+    font-size: 60px;
+    color: #ffc600;
+    margin-top: 26px
+}
+
+.mob_light_image {
+    display: none
+}
+
+.solar_mob_image {
+    display: none
+}
+
+.left_video_box video {
+    width: 100%;
+    height: 460px
+}
+
+@media screen and (max-width:767px) {
+    .left_video_box {
+        text-align: center
+    }
+}
+
+@media screen and (max-width:480px) {
+    .right_step_box h3 {
+        font-size: 30px
+    }
+    .right_step_box {
+        margin-top: 26px
+    }
+    .solar_step_first_box {
+        width: 100%;
+        border-right: none;
+        margin-bottom: 4px
+    }
+    .solar_step_first_box .desk_image {
+        width: 100%
+    }
+    .solar_step_first_box .no_image {
+        left: -6px
+    }
+    .first_mid_box {
+        padding: 52px 16%;
+        color: #fff;
+        padding-top: 30px
+    }
+    .enquery_box_one {
+        font-size: 18px;
+        margin-bottom: 8px
+    }
+    span.call_text {
+        font-size: 15px
+    }
+    .right_step_box h6 {
+        font-size: 14px
+    }
+    .solar_mob_image {
+        display: block
+    }
+    .solar_desk_image {
+        display: none
+    }
+    .solar_big_mid_box h4 {
+        font-size: 22px
+    }
+}
+.foot{
+    margin-left: 500px;
+}

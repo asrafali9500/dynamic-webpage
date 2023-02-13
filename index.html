@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarPanel Website</title>
+
+    <link rel="icon" href="./images/icons.png" type="image/icon type">
+    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/new_popup.css">
+    <link rel="stylesheet" href="css/style-home.css">
+
+
+</head>
+
+<body>
+    <script>
+        function onHandleForm(e) {
+            var x = document.myform.mobile.value.length;
+            var m_fstdigt = document.myform.mobile.value.substring(0, 1);
+            var validm = 0;
+            if (x != 10) {
+                alert("Invalid Mobile Number!");
+                return false;
+            } else {
+                if (m_fstdigt == '0' || m_fstdigt == '1') {
+                    alert("Invalid Mobile Number!");
+                    return false;
+                }
+                for (let i = 1; i < x; i++)
+                    if (document.myform.mobile.value.substring(i, i + 1) != m_fstdigt)
+                        validm = 1;
+                if (validm == 0) {
+                    alert("Invalid Mobile Number!");
+                    return false;
+                }
+            }
+            if (document.myform.pincode.value.length != 6) {
+                alert("Invalid Pincode!");
+                return false;
+            }
+            // Email Validation 29 June - Apurba 
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.myform.email.value)) {
+
+            } else {
+                alert("You have entered an invalid email address!");
+                return false;
+            }
+
+
+            // ------- contactapi ----------------
+            const ele = document.getElementsByName('Residential');
+            let residential = "";
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked)
+                    residential = ele[i].value;
+            }
+
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            const eb_number = document.getElementById('eb_number').value;
+            const pincode = document.getElementById('pincode').value;
+
+            const data = {
+                name: name,
+                phoneNo: mobile,
+                address: pincode,
+                email: email,
+                AdditionalInfo: residential === "Residential" ? "R-" + eb_number : "C-" + eb_number,
+                Website: "web"
+            }
+            //  console.log(data, "data");
+            fetch("http://contact.solarpanel.com/api/contact", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    //console.log(res, "res");
+                    return res.json();
+                })
+                .then(res => {
+                    // console.log(res, "res")
+                    alert('Please Wait...!Data is Updating');
+                    window.location.href = "./thank_you/thank-you.html";
+                })
+            //window.location.href = "../thank-you.html";
+            return false;
+
+
+
+
+            document.getElementById("submit").disabled = true;;
+            return true;
+        }
+    </script>
+
+
+    <section class="wrraper" id="top-s">
+
+
+        <section class="right-fixed">
+
+        </section>
+
+        <section class="hero-section">
+            <div class="hero-slider main-cont-sec">
+                <ul>
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner_new1.jpg" alt="banner-01">
+                            <div class="hero-img-cont hero-img-cont_banner">
+                                <h3>
+                                    <span>Domestic Roof Top Solar</span>
+                                </h3>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner_new2.jpg" alt="banner-01">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner-01r.jpg" alt="banner-01">
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner-02.jpg" alt="banner-02">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hero-img-sec">
+                            <img src="images/banner-03.jpg" alt="banner-03">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="bottom-form color-white font-gotham" data-aos="fade-down">
+                    <div class="row">
+                        <div class="col-md-3 p-0 ">
+                            <div class="call-today bg-color-blue text-center height-100 py-3">
+
+                                <h6 class="font-poppins font-w100 m-0 fs-26 position-relative">
+                                    <div class="ph_icon"><img src="images/ph_icon.png" alt="icon" /></div> Call Us Today
+                                </h6>
+                                <a class="color-white font-gotham fs-30">95******** </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 p-0" id="form-top">
+                            <div
+                                class="hero-form d-flex align-items-center justify-content-center bg-color-blue height-100 font-poppins font-w100 hero_box">
+
+                                <form class="d-flex align-items-center" name="myform" id="myForm1"
+                                    onsubmit="return onHandleForm()" method="post">
+                                    <input type="hidden" id="encoding" name="encoding" value="UTF-8">
+                                    <input type="hidden" id="oid" name="oid" value="">
+
+                                    <div class="form-wrap my-3 form_main_box">
+
+                                        <div class="radio-btn d-flex align-item-center mb-4 mr-3 enquery_box">
+                                            <span class="mx-1 fs-22 form-label enquery_text">Enquire Now </span>
+                                            <div class="form_right_box">
+                                                <p class="font-poppins m-0 ml-2"> I'm looking for </p>
+                                                <div class="custom-control custom-radio ml-0 ml-md-4">
+                                                    <input type="radio" class="custom-control-input" id="customRadio"
+                                                        name="Residential" value="Residential" required>
+                                                    <label class="custom-control-label m-0"
+                                                        for="customRadio">Residential</label>
+                                                </div>
+                                                <div class="custom-control custom-radio ml-0 ml-md-4">
+                                                    <input type="radio" class="custom-control-input" id="customRadio2"
+                                                        name="Residential" value="Non-Residential" required>
+                                                    <label class="custom-control-label m-0"
+                                                        for="customRadio2">Non-Residential</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-inputs d-flex align-item-center flex-wrap form_box">
+                                            <input type="text" id="name" placeholder="Name*" pattern="[a-zA-Z .]{2,}"
+                                                title="Only Alphabets with space and dot" required>
+                                            <input type="number" id="mobile" name="mobile" maxlength=10
+                                                placeholder="10 digit Mobile number*" required>
+                                            <input type="email" id="email" name="email" placeholder="Email*" required>
+
+
+                                            <input type="number" id="eb_number" name="eb_number" class="mask"
+                                                placeholder="EB Service No*"
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                                                required>
+                                            <input type="number" id="pincode" name="pincode" maxlength=6
+                                                placeholder="6 digit pincode*" pattern="[0-9]{6}"
+                                                title="Only 6 digits number" required>
+
+
+                                            <input type="submit" id="submit" name="submit" value="Submit Your Interest"
+                                                class="bg-color-white">
+                                        </div>
+                                        <span class="agree_text">I agree to the Solar Panel <a href="#"
+                                                target="_blank">Terms of Use </a></span>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="choose-need padding-v-100" id="product-range">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="roof-top-sec font-gotham">
+                            <h3 class="font-weight-bold color-blue fs-36 text-uppercase mb-4 ">Product range</h3>
+                            <!-- <h3 class="text-danger fs-36 text-uppercase mb-3">Product range</h3> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="choose-need-slider font-poppins text-bold">
+                            <ul class="my-3">
+                                <li>
+                                    <a class="abs-anchor gtmgridconnectedsolarsystem" data-fancybox
+                                        data-src="#p-range-1" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img src="images/IMG-20221120-WA0037.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Off Grid Solar System </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Off Grid Solar System'});"
+                                                href="#" class="fs-18 color-black"><i class="fa fa-arrow-right"
+                                                    aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmbatterybasedsolarsystem" data-fancybox data-src="#p-range-2"
+                                        href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img src="images/IMG-20221120-WA0035.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18"> Grid Solar System </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: 'Grid Solar System'});"
+                                                href="#" class="fs-18 color-black"><i class="fa fa-arrow-right"
+                                                    aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="abs-anchor gtmmicroinverterbasedgridconnectedsystem" data-fancybox
+                                        data-src="#p-range-3" href="javascript:;"></a>
+                                    <div class="slider-cont d-block">
+                                        <div class="slider-img-sec">
+                                            <img src="images/IMG-20221120-WA0036.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para ">
+                                            <p class="fs-18">Hybrid solar system </p>
+                                        </div>
+                                        <div class="more-btn font-poppins">
+                                            <a onClick="gtag('event', 'Popup', {event_category: 'Popup Click', event_label: Hybrid Solar system'});"
+                                                href="#" class="fs-18 color-black"><i class="fa fa-arrow-right"
+                                                    aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slider-pops" style="display: none;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="font-poppins text-bold">
+                        <ul class="my-3">
+                            <li>
+                                <div class="slider-cont" id="p-range-1">
+                                    <div class="slider-img-sec">
+                                        <img src="images/IMG-20221120-WA0037.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Off Grid Solar System </p>
+                                        <ul class="">
+                                            <li>
+                                                <p>Product range from 1 kW to multiple MWs </p>
+                                            </li>
+                                            <li>
+                                                <p>Best quality solar panels, inverters & other components for maximum
+                                                    output, design life</p>
+                                            </li>
+                                            <li>
+                                                <p>Remote monitoring on mobile & web interface </p>
+                                            </li>
+                                            <li>
+                                                <p>Suitable for any customer segment with shadow-free roof / ground area
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-2">
+                                    <div class="slider-img-sec">
+                                        <img src="images/IMG-20221120-WA0035.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center"> Grid Solar System </p>
+                                        <ul class="">
+                                            <li>
+                                                <p> Suitable for homes, offices, industries etc. where grid reliability
+                                                    is problematic</p>
+                                            </li>
+                                            <li>
+                                                <p> Off-grid systems: Power critical lighting loads, without grid export
+                                                    functionality </p>
+                                            </li>
+                                            <li>
+                                                <p> Hybrid systems: Power heavy load, export excess generation to grid &
+                                                    can also complement DG sets</p>
+                                            </li>
+                                            <li>
+                                                <p> Advance battery protection logic</p>
+                                            </li>
+                                            <li>
+                                                <p> Variants with both lead acid & Li Ion batteries available </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="slider-cont d-block" id="p-range-3">
+                                    <div class="slider-img-sec">
+                                        <img src="images/IMG-20221120-WA0036.jpg" alt="">
+                                    </div>
+                                    <div class="slider-para ">
+                                        <p class="fs-18 text-bold mb-2 text-center">Hybrid solar system </p>
+                                        <ul class="">
+                                            <li>
+                                                <p> Designed for Villas, Bungalows etc</p>
+                                            </li>
+                                            <li>
+                                                <p>Flexibility: suitable for different tilt and azimuth angles</p>
+                                            </li>
+                                            <li>
+                                                <p>Module level MPPT and monitoring: higher yield in cases of partial
+                                                    shadow, soiling</p>
+                                            </li>
+                                            <li>
+                                                <p>Superior Safety: No aggregation of Direct Current on roof </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--close light box of roof-top  -->
+        <section class="success-story-sec padding-v-100 text-center" id="projects">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 py-4">
+                        <div class="roof-top-sec width-100 font-gotham text-center">
+
+                            <h3 class="font-weight-bold color-blue fs-36 text-uppercase">Key Installations</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 p-3">
+                        <div class="success-story-slider">
+                            <div class="roof-top-sec width-100 font-gotham text-left mb-3">
+                                <h6 class="font-weight-bold color-primery-d fs-20 p-2">Residential </h6>
+
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <div class="slider-cont bg-light-gray">
+                                        <div class="slider-img-sec">
+                                            <img src="images/anert.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="text-danger fs-26 text-bold text-left text-uppercase mb-4">
+                                                8000+ Rooftop Solar Systems – ANERT, Kerala
+                                            </h6>
+                                            <ul class="text-left color-black">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Savings for families & the Kerala Government
+                                                    </h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Total 10 MW+ installations of 1-5 kW each</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Unique roofs - unique designs </h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Robust Systems customized for High Wind Speeds
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                            <div class="font-poppins">
+                                                <a href="index.html" target="" class="fs-16 color-black">Know more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-light-gray   ">
+                                        <div class="slider-img-sec">
+                                            <img src="images/suvidha.jpg" alt="">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="text-danger fs-26 text-bold text-left text-uppercase mb-4">32
+                                                systems of 5 kW each – SUVIDHA HOUSING SOCIETY, BENGALURU, INDIA</h6>
+                                            <ul class="text-left color-black">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Annual Energy Yield: 14,400 Units*</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> CO<sub>2</sub> offset in 25 years: 252 Tonnes*
+                                                    </h6>
+                                                </li>
+                                                <!-- <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2" aria-hidden="true"></i><h6 class=" fs-16"> 32 systems commissioned </h6> </li> -->
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class=" fs-16"> Solar Panels installed on RCC roofs without
+                                                        drilling any holes</h6>
+                                                </li>
+                                            </ul>
+                                            <div class="font-poppins">
+                                                <a href="index.html" target="" class="fs-16 color-black">Know more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 p-3">
+                        <div class="success-story-slider">
+                            <div class="roof-top-sec width-100 font-gotham text-left m-3 ">
+                                <h6 class=" font-weight-bold color-primery-d fs-20">Commercial & Industrial </h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="slider-cont bg-color-black">
+                                        <div class="slider-img-sec">
+                                            <img src="images/rssb.jpg">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="text-white fs-26 text-bold text-left text-uppercase mb-4">16 MW
+                                                Rooftop Solar Power System – RSSB-EES, Beas</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16">Largest Solar Rooftop Power Plant in
+                                                        the world, at a single site, on varied & fragile roofs</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Estimated Energy Generation: 150
+                                                        lakhs kWh annually</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> CO<sub>2</sub> displacement: 19000
+                                                        tonnes annually</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Fixed energy cost for 25 years</h6>
+                                                </li>
+                                            </ul>
+                                            <a href="index.html" target="" class="fs-16 color-white">Know more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-black">
+                                        <div class="slider-img-sec">
+                                            <img src="images/cci.jpg">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">820.8
+                                                kWp Solar Rooftop Installation – CCI Stadium, Mumbai </h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> World’s largest solar powered cricket
+                                                        stadium </h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Offset 840 tonnes of carbon annually
+                                                    </h6>
+                                                </li>
+                                            </ul>
+                                            <a href="index.html" target="" class="fs-16 color-white">Know more</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/dell.jpg">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">120 kW
+                                                Vertical Solar Power Farm – Dell</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> India’s largest vertical solar farm
+                                                    </h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> 45-meter structure built on Dell’s
+                                                        Bengaluru campus</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Vertical structure designed with a
+                                                        30' moving tilt</h6>
+                                                </li>
+                                            </ul>
+                                            <a href="http://www.solarpanel.com" target="_blank"
+                                                class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-cont bg-color-blue">
+                                        <div class="slider-img-sec">
+                                            <img src="images/ge.jpg">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">1
+                                                million kWh of solar power per year – GE</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> To generate over 1 million kWh of
+                                                        solar power per year at GE’s six key manufacturing and
+                                                        maintenance sites in India.</h6>
+                                                </li>
+                                            </ul>
+                                            <a href="http://www.solarpanel.com" target="_blank"
+                                                class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="slider-cont bg-color-black">
+                                        <div class="slider-img-sec">
+                                            <img src="images/cochin.jpg">
+                                        </div>
+                                        <div class="slider-para p-5">
+                                            <h6 class="color-white fs-26 text-bold text-left text-uppercase mb-4">2.67
+                                                MW Solar Plant – Carport, Cochin International Airport Ltd.</h6>
+                                            <ul class="text-left">
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Largest Carport in India</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Spread across 20289.9 sq. m</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Installed on 27 car ports</h6>
+                                                </li>
+                                                <li class="mb-3 ml-0"><i class="fa fa-check color-primery fs-14 mr-2"
+                                                        aria-hidden="true"></i>
+                                                    <h6 class="color-white fs-16"> Offsetting 1868 tonnes of
+                                                        CO<sub>2</sub> annually</h6>
+                                                </li>
+
+                                            </ul>
+                                            <a href="http://www.solarpanel.com" target="_blank"
+                                                class="fs-16 color-white">Know more</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="bg-color-gray-d position-relative mt-5">
+            <div class="container">
+                <div class="row mt-5">
+                    <!--<div class="col-md-6 mt-5 pb-4">
+                        <div class="foo-left">
+                            <div class="foo-logo mb-4">
+                                <a href="index.html"> <img src="images/tata-solar-logo.png" alt="tata-solar-logo.png"></a>
+                            </div>
+
+                        </div>
+                    </div>-->
+
+                    <div class="col-md-6 p-5 text-right">
+                        <div class="foo-right mt-5">
+                            <div class="foo-social mb-4">
+                                <ul class="d-flex justify-content-end">
+                                    <li><a href="https://twitter.com" target="_blank"></a><i class="fa fa-twitter"
+                                            aria-hidden="true"></i></li>
+                                    <li><a href="https://www.facebook.com" target="_blank"></a><i class="fa fa-facebook"
+                                            aria-hidden="true"></i></li>
+                                    <li><a href="https://www.linkedin.com" target="_blank"></a><i class="fa fa-linkedin"
+                                            aria-hidden="true"></i></li>
+                                    <li><a href="https://www.youtube.com" target="_blank"></a><i
+                                            class="fa fa-youtube-play" aria-hidden="true"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="foo-cp font-poppins color-gray ">
+                                <p class="fs-16">All Rights Reserved &copy; SolarPanel. 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </section>
+
+    <!--close light box of why  -->
+
+
+    <!-- <script src="js/contactapi.js"></script> -->
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.matchHeight-min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
